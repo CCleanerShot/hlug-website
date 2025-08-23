@@ -1,1 +1,57 @@
 @import "tailwindcss";
+
+@theme inline {
+  --color-background: rgb(255, 255, 255);
+  --color-foreground: rgb(45, 45, 45);
+  --color-para: rgb(102, 102, 102);
+
+  --color-card: rgb(238, 238, 238);
+  --color-card-foreground: rgb(112, 112, 112);
+  --color-border-card: rgb(220, 220, 220);
+
+  --color-border: rgb(238, 238, 238);
+  --leading-header: 42px;
+  --inset-shadow-card: inset 0 1px 1px rgba(0, 0, 0, 0.5);
+  --color-link: rgb(0, 153, 221);
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground text-[15px];
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply leading-header;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply my-[10.5px];
+  }
+
+  h4 {
+    @apply text-[18.75px];
+  }
+
+  p {
+    @apply mb-[10.5px] text-[0.938rem] leading-[21px] text-para;
+  }
+
+  .card p {
+    @apply mb-[10.5px] text-[0.938rem] leading-[21px] text-card-foreground;
+  }
+
+  li {
+    @apply leading-[21px];
+  }
+
+  a {
+    @apply text-link;
+  }
+}
